@@ -1,14 +1,20 @@
 import { Call } from "../models/calls";
+import { publishMissedCall } from "../producers/rabbitProducer";
 
 export class CallService {
 
-  createCall(call: Call) {
-    console.log("Nova chamada registrada:", call)
+  async createCall(call: Call) {
 
-    return {
-      message: "Call registered successfully",
-      data: call
-    }
+  console.log("Nova chamada registrada:", call)
+
+  if (call.status === "PERDIDA") {
+    await publishMissedCall(call)
   }
+
+  return {
+    message: "Call registered successfully",
+    data: call
+  }
+}
 
 }
