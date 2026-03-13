@@ -12,7 +12,7 @@ export class CallService {
   }
 
   return {
-    message: "Call registered successfully",
+    message: "Nova chamada registrada:",
     data: call
   }
 }
