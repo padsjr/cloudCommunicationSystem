@@ -4,3 +4,15 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+      
+  callservice:
+    build: ../callService
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rabbitmq
+
+  notificationservice:
+    build: ../notificationService
+    depends_on:
+      - rabbitmq
