@@ -16,3 +16,7 @@ services:
     build: ../notificationService
     depends_on:
       - rabbitmq
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
