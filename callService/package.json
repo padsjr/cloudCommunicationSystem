@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --prefer-ts-exts src/server.ts"
+    "dev": "./node_modules/.bin/ts-node-dev --prefer-ts-exts src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,8 @@
   "description": "",
   "dependencies": {
     "amqplib": "^0.10.9",
-    "fastify": "^5.8.2"
+    "fastify": "^5.8.2",
+    "mongodb": "^7.1.0"
   },
   "devDependencies": {
     "@types/amqplib": "^0.10.8",
